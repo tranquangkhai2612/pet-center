@@ -10,6 +10,6 @@ package com.group4.petcenter.Models.Enums;
  */
 public enum AccountTypeEnum {
     ADMIN,
-    DOCTORS,
+    DOCTOR,
     SALERS
 }

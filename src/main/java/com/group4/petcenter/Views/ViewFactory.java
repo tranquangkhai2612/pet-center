@@ -35,6 +35,7 @@ public class ViewFactory {
     private AnchorPane mAddPet;
     
     public ViewFactory(){
+        this.mLoginAccountType = AccountTypeEnum.SALERS;
         this.adminSelectedMenuItem = new SimpleObjectProperty();
     }
 
@@ -95,6 +96,16 @@ public class ViewFactory {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Admin.fxml"));
         createStage(loader);
     }
+    
+    public void showDoctorWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Doctor/Doctor.fxml"));
+        createStage(loader);
+    }
+    
+    public void showSalerWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Saler/Saler.fxml"));
+        createStage(loader);
+    }
 
     private void createStage(FXMLLoader loader){
         Scene scene = null;
@@ -117,4 +128,14 @@ public class ViewFactory {
     public ObjectProperty getAdminSelectedMenuItem() {
         return adminSelectedMenuItem;
     }
+
+    public AccountTypeEnum getLoginAccountType() {
+        return mLoginAccountType;
+    }
+
+    public void setLoginAccountType(AccountTypeEnum mLoginAccountType) {
+        this.mLoginAccountType = mLoginAccountType;
+    }
+    
+    
 }
