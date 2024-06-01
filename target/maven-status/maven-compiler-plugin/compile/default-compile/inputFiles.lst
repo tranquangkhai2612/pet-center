@@ -1,6 +1,16 @@
 D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Doctor\DoctorController.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminProductsController.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Models\Enums\DOCTOR_MENU.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminOverviewController.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\App.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminDoctorsController.java
 D:\FPT\S2\Project\PetCenter\src\main\java\module-info.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Models\Enums\ADMIN_MENU.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminMenuController.java
 D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminController.java
 D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Saler\SalerController.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Models\Model.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Views\ViewFactory.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\Admin\AdminSalersController.java
 D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Controllers\LoginController.java
-D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\App.java
+D:\FPT\S2\Project\PetCenter\src\main\java\com\group4\petcenter\Models\Enums\SALER_MENU.java

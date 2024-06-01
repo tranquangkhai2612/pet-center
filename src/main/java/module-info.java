@@ -7,4 +7,9 @@ module com.group4.petcenter {
     opens com.group4.petcenter to javafx.fxml;
     exports com.group4.petcenter;
     exports com.group4.petcenter.Controllers;
+    exports com.group4.petcenter.Controllers.Admin;
+    exports com.group4.petcenter.Controllers.Doctor;
+    exports com.group4.petcenter.Controllers.Saler;
+    exports com.group4.petcenter.Models;
+    exports com.group4.petcenter.Views;
 }

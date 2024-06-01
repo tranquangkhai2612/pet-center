@@ -1,6 +1,16 @@
 com\group4\petcenter\App.class
-com\group4\petcenter\Controllers\LoginController.class
+com\group4\petcenter\Controllers\Admin\AdminSalersController.class
+com\group4\petcenter\Models\Enums\SALER_MENU.class
 module-info.class
 com\group4\petcenter\Controllers\Doctor\DoctorController.class
+com\group4\petcenter\Controllers\Admin\AdminDoctorsController.class
+com\group4\petcenter\Controllers\Admin\AdminMenuController.class
+com\group4\petcenter\Controllers\Admin\AdminProductsController.class
+com\group4\petcenter\Controllers\LoginController.class
+com\group4\petcenter\Controllers\Admin\AdminOverviewController.class
+com\group4\petcenter\Models\Model.class
+com\group4\petcenter\Views\ViewFactory.class
+com\group4\petcenter\Models\Enums\DOCTOR_MENU.class
 com\group4\petcenter\Controllers\Saler\SalerController.class
 com\group4\petcenter\Controllers\Admin\AdminController.class
+com\group4\petcenter\Models\Enums\ADMIN_MENU.class
