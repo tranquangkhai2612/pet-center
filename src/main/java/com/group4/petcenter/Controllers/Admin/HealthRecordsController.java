@@ -8,6 +8,6 @@ package com.group4.petcenter.Controllers.Admin;
  *
  * @author Trần Quang Khải
  */
-public class AdminDoctorsController {
+public class HealthRecordsController {
     
 }

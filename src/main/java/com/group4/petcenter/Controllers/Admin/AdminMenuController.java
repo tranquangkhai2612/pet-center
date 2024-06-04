@@ -20,17 +20,22 @@ import javafx.scene.control.Button;
 public class AdminMenuController implements Initializable {
 
     @FXML
-    public Button eOverview;
+    public Button eDiagnosisServices;
+
     @FXML
-    public Button eProducts;
-    @FXML
-    public Button eDoctors;
-    @FXML
-    public Button eSalers;
-    @FXML
-    public Button eSettings;
+    public Button eHealthRecords;
+
     @FXML
     public Button eLogout;
+
+    @FXML
+    public Button eProducts;
+
+    @FXML
+    public Button eSettings;
+
+    @FXML
+    public Button eUsers;
 
     /**
      * Initializes the controller class.
@@ -41,25 +46,25 @@ public class AdminMenuController implements Initializable {
     }    
     
     private void addListeners(){
-        eOverview.setOnAction(actionEvent -> onOverview());
+        eUsers.setOnAction(actionEvent -> onUsers());
         eProducts.setOnAction(actionEvent -> onProducts());
-        eDoctors.setOnAction(actionEvent -> onDoctors());
-        eSalers.setOnAction(actionEvent -> onSalers());
+        eHealthRecords.setOnAction(actionEvent -> onHealthRecords());
+        eDiagnosisServices.setOnAction(actionEvent -> onDiagnosisServices());
     }
 
     private void onProducts() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.PRODUCTS);
     }
 
-    private void onOverview(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.OVERVIEW);
+    private void onUsers(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.USERS);
     }
     
-    private void onDoctors(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.DOCTORS);
+    private void onHealthRecords(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.HEALTH_RECORDS);
     }
     
-    private void onSalers(){
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.SALERS);
+    private void onDiagnosisServices(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.DIAGNOSIS_SERVICES);
     }
 }

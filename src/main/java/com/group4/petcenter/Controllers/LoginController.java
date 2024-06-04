@@ -43,7 +43,7 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        eAccountSelect.setItems(FXCollections.observableArrayList(AccountTypeEnum.ADMIN, AccountTypeEnum.DOCTOR, AccountTypeEnum.SALERS));
+        eAccountSelect.setItems(FXCollections.observableArrayList(AccountTypeEnum.ADMIN, AccountTypeEnum.STAFF));
         eAccountSelect.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         eAccountSelect.valueProperty().addListener(observable -> Model.getInstance().getViewFactory().setLoginAccountType(eAccountSelect.getValue()));
         eLogin.setOnAction(actionEvent -> onLogin());
@@ -54,11 +54,8 @@ public class LoginController implements Initializable {
         Model.getInstance().getViewFactory().closeStage(stage);
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountTypeEnum.ADMIN){
             Model.getInstance().getViewFactory().showAdminWindow();
-        }if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountTypeEnum.DOCTOR){
-            Model.getInstance().getViewFactory().showDoctorWindow();
-        }
-        else{
-            Model.getInstance().getViewFactory().showSalerWindow();
+        }else{
+            Model.getInstance().getViewFactory().showStaffWindow();
         }
     }
     

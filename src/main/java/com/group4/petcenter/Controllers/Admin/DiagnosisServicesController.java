@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
  *
  * @author Trần Quang Khải
  */
-public class AdminSalersController implements Initializable{
+public class DiagnosisServicesController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

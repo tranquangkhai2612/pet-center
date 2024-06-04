@@ -21,10 +21,10 @@ public class ViewFactory {
     private final ObjectProperty<AdminMenuEnum> adminSelectedMenuItem;
     
     // Admin
-    private AnchorPane mOverviewView;
+    private AnchorPane mUsersView;
+    private AnchorPane mHealthRecordsView;
+    private AnchorPane mDiagnosisServicesView;
     private AnchorPane mProductsView;
-    private AnchorPane mDoctorsView;
-    private AnchorPane mSalersView;
 
     // Salers
     private AnchorPane mProducts;
@@ -35,56 +35,56 @@ public class ViewFactory {
     private AnchorPane mAddPet;
     
     public ViewFactory(){
-        this.mLoginAccountType = AccountTypeEnum.SALERS;
+        this.mLoginAccountType = AccountTypeEnum.ADMIN;
         this.adminSelectedMenuItem = new SimpleObjectProperty();
     }
 
-    public AnchorPane getOverviewView(){
-        if(mOverviewView == null){
+    public AnchorPane getUsersView(){
+        if(mUsersView == null){
             try {
-                mOverviewView = new FXMLLoader(getClass().getResource("/Fxml/Admin/AdminOverview.fxml")).load();
+                mUsersView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Users.fxml")).load();
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
 
-        return mOverviewView;
+        return mUsersView;
+    }
+    
+    public AnchorPane getHealthRecordsView(){
+        if(mHealthRecordsView == null){
+            try {
+                mHealthRecordsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/HealthRecords.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return mHealthRecordsView;
+    }
+    
+    public AnchorPane getDiagnosisServicesView(){
+        if(mDiagnosisServicesView == null){
+            try {
+                mDiagnosisServicesView = new FXMLLoader(getClass().getResource("/Fxml/Admin/DiagnosisServices.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return mDiagnosisServicesView;
     }
     
     public AnchorPane getProductsView(){
         if(mProductsView == null){
             try {
-                mProductsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/AdminProducts.fxml")).load();
+                mProductsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Products.fxml")).load();
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
 
         return mProductsView;
-    }
-    
-    public AnchorPane getSalersView(){
-        if(mDoctorsView == null){
-            try {
-                mDoctorsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/AdminDoctors.fxml")).load();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-
-        return mDoctorsView;
-    }
-    
-    public AnchorPane getDoctorsView(){
-        if(mSalersView == null){
-            try {
-                mSalersView = new FXMLLoader(getClass().getResource("/Fxml/Admin/AdminSalers.fxml")).load();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-
-        return mSalersView;
     }
 
     public void showLoginWindow(){
@@ -97,13 +97,8 @@ public class ViewFactory {
         createStage(loader);
     }
     
-    public void showDoctorWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Doctor/Doctor.fxml"));
-        createStage(loader);
-    }
-    
-    public void showSalerWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Saler/Saler.fxml"));
+    public void showStaffWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Staff/Staff.fxml"));
         createStage(loader);
     }
 

@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author Trần Quang Khải
  */
-public class AdminProductsController implements Initializable {
+public class ProductsController implements Initializable {
 
     /**
      * Initializes the controller class.

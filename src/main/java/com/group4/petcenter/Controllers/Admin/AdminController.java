@@ -4,9 +4,7 @@
  */
 package com.group4.petcenter.Controllers.Admin;
 
-import static com.group4.petcenter.Models.Enums.AdminMenuEnum.DOCTORS;
-import static com.group4.petcenter.Models.Enums.AdminMenuEnum.PRODUCTS;
-import static com.group4.petcenter.Models.Enums.AdminMenuEnum.SALERS;
+import static com.group4.petcenter.Models.Enums.AdminMenuEnum.*;
 import com.group4.petcenter.Models.Model;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,14 +26,14 @@ public class AdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().addListener(((observableValue, oldVal, newVal) -> {
             
-            if(newVal.equals(PRODUCTS)){
-                adminParent.setCenter(Model.getInstance().getViewFactory().getProductsView());
-            }else if(newVal.equals(DOCTORS)){
-                adminParent.setCenter(Model.getInstance().getViewFactory().getDoctorsView());
-            }else if(newVal.equals(SALERS)){
-                adminParent.setCenter(Model.getInstance().getViewFactory().getSalersView());
+            if(newVal.equals(USERS)){
+                adminParent.setCenter(Model.getInstance().getViewFactory().getUsersView());
+            }else if(newVal.equals(HEALTH_RECORDS)){
+                adminParent.setCenter(Model.getInstance().getViewFactory().getHealthRecordsView());
+            }else if(newVal.equals(DIAGNOSIS_SERVICES)){
+                adminParent.setCenter(Model.getInstance().getViewFactory().getDiagnosisServicesView());
             }else{
-                adminParent.setCenter(Model.getInstance().getViewFactory().getOverviewView());
+                adminParent.setCenter(Model.getInstance().getViewFactory().getProductsView());
             }
         }));
     }    

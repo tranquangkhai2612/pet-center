@@ -9,8 +9,8 @@ package com.group4.petcenter.Models.Enums;
  * @author Trần Quang Khải
  */
 public enum AdminMenuEnum {
-    OVERVIEW,
-    PRODUCTS,
-    DOCTORS,
-    SALERS
+    USERS,
+    HEALTH_RECORDS,
+    DIAGNOSIS_SERVICES,
+    PRODUCTS
 }
