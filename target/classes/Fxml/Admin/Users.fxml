@@ -16,7 +16,7 @@
          <children>
             <AnchorPane prefHeight="700.0" prefWidth="700.0">
                <children>
-                  <Text fill="#fb6f92" layoutX="173.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Record List" textAlignment="CENTER" AnchorPane.topAnchor="14.0">
+                  <Text fill="#fb6f92" layoutX="273.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Record List" textAlignment="CENTER" AnchorPane.topAnchor="13.576171875">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -42,6 +42,34 @@
                         <TableColumn prefWidth="200.0" text="Date" />
                         <TableColumn prefWidth="200.0" text="Dianosis" />
                         <TableColumn prefWidth="108.0" text="Action" />
+                    </columns>
+                  </TableView>
+                  <Text fill="#fb6f92" layoutX="322.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Animal" AnchorPane.topAnchor="498.576171875">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <HBox alignment="CENTER" layoutX="202.0" layoutY="531.0" prefHeight="50.0" prefWidth="300.0" AnchorPane.bottomAnchor="120.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal ID:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fill="#fb6f92" strokeType="OUTSIDE" strokeWidth="0.0" text="111">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
                     </columns>
                   </TableView>
                </children>
@@ -77,12 +105,12 @@
                         <TableColumn prefWidth="100.0" text="Action" />
                      </columns>
                   </TableView>
-                  <Button layoutX="90.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Add Service" textFill="#fb6f92" AnchorPane.bottomAnchor="119.60000000000002">
+                  <Button layoutX="90.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #fb6f92;" text="Add Service" textFill="WHITE" AnchorPane.bottomAnchor="119.60000000000002">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="90.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Add Product" textFill="#2ec4b6" AnchorPane.bottomAnchor="49.60000000000002">
+                  <Button layoutX="90.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2ec4b6;" text="Add Product" textFill="WHITE" AnchorPane.bottomAnchor="49.60000000000002">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
