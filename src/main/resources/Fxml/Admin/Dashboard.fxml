@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.petcenter.Controllers.Admin.DashboardController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane fx:id="addUser_form" layoutX="14.0" layoutY="14.0" prefHeight="627.0" prefWidth="796.0" AnchorPane.bottomAnchor="-427.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-596.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                  <PieChart />
+                        <AnchorPane layoutX="14.0" layoutY="26.0" prefHeight="587.0" prefWidth="974.0" stylesheets="@..\..\Styles\UserDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-192.0" AnchorPane.topAnchor="26.0">
+                            <styleClass>
+                               <String fx:value="white-bg" />
+                               <String fx:value="shadow" />
+                               <String fx:value="radius" />
+                            </styleClass>
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="223.0" prefWidth="633.0" stylesheets="@../../Styles/UserDesign.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffafcc" height="184.0" layoutX="14.0" layoutY="19.0" stroke="WHITE" strokeType="INSIDE" width="190.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="222.0" layoutY="19.0" stroke="#ffafcc" strokeType="INSIDE" width="190.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="429.0" layoutY="19.0" stroke="#ffafcc" strokeType="INSIDE" width="190.0" />
+                              <Text fill="#fb6f92" layoutX="237.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiring Soon" textAlignment="CENTER" wrappingWidth="160.66664123535162">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#fb6f92" layoutX="444.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Stock" textAlignment="CENTER" wrappingWidth="160.66664123535162">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" layoutX="28.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Income" textAlignment="CENTER" wrappingWidth="160.66664123535162">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lb_totalincome" alignment="CENTER" layoutX="22.0" layoutY="71.0" prefHeight="95.0" prefWidth="173.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_expiringsoon" alignment="CENTER" layoutX="230.0" layoutY="71.0" prefHeight="95.0" prefWidth="173.0" text="0" textAlignment="CENTER" textFill="#ffafcc">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_lowstock" alignment="CENTER" layoutX="437.0" layoutY="71.0" prefHeight="95.0" prefWidth="173.0" text="0" textAlignment="CENTER" textFill="#ffafcc">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <BarChart fx:id="bc_totalincome" layoutY="249.0" prefHeight="369.0" prefWidth="557.0" style="-fx-stroke: #ffafcc;" stylesheets="@../../Styles/UserDesign.css" title="Total Income by Month">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>                          
+                        </BarChart>
+                        <LineChart fx:id="lc_totalhc" layoutX="552.0" layoutY="249.0" prefHeight="369.0" prefWidth="424.0" style="-fx-stroke: #ffafcc;" stylesheets="@../../Styles/UserDesign.css" title="Total Health Record by Month">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <AnchorPane layoutX="665.0" layoutY="14.0" prefHeight="223.0" prefWidth="298.0" stylesheets="@../../Styles/UserDesign.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <children>
+                              <PieChart fx:id="pc_breed" layoutY="-1.0" prefHeight="223.0" prefWidth="297.0" style="-fx-pie-color: #ffafcc;" stylesheets="@../../Styles/UserDesign.css" title="Breed" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
