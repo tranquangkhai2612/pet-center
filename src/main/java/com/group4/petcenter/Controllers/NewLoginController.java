@@ -20,6 +20,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 /**
  *
  * @author vyvt
@@ -48,16 +49,13 @@ public class NewLoginController {
     private AlertMessage alert = new AlertMessage();
 
     public void loginAccount() {
-        if (login_username.getText().isEmpty() && login_password.getText().isEmpty()){
+        if (login_username.getText().isEmpty() && login_password.getText().isEmpty()) {
             alert.errorMessage("Fill Username and Password");
-        }
-        else if (login_username.getText().isEmpty()){
+        } else if (login_username.getText().isEmpty()) {
             alert.errorMessage("Empty Username");
-        }
-        else if(login_password.getText().isEmpty()){
+        } else if (login_password.getText().isEmpty()) {
             alert.errorMessage("Empty Password");
-        } 
-        else {
+        } else {
             String sql = "SELECT * FROM Users WHERE User_name = ? AND Pass_word = ?";
             ConnectDB db = new ConnectDB();
             connect = db.getConnect();
@@ -79,13 +77,13 @@ public class NewLoginController {
                     // IF CORRECT USERNAME AND PASSWORD
                     alert.successMessage("Login Successfully!");
                     String role = result.getString("Role");
-                    if(role.equalsIgnoreCase("admin")){
+                    if (role.equalsIgnoreCase("admin")) {
                         // LINK MAIN FORM FOR ADMIN
                         Model.getInstance().getViewFactory().showAdminWindow();
-                    }else{
+                    } else {
                         Model.getInstance().getViewFactory().showStaffWindow();
                     }
-                    
+
                     Stage stage = (Stage) login_loginBtn.getScene().getWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
                 } else {

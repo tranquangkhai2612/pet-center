@@ -142,7 +142,7 @@ public class ViewFactory {
     }
 
     public void showLoginWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Users.fxml"));
         createStage(loader);
     }
 

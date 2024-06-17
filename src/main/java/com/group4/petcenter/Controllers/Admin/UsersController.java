@@ -37,6 +37,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
 /**
  * FXML Controller class
  *
@@ -71,8 +72,8 @@ public class UsersController implements Initializable {
     private TableColumn<?, ?> addUser_col_userid;
     @FXML
     private TableColumn<?, ?> addUser_col_username;
-//    @FXML
-//    private TableColumn<?, ?> addUser_col_password;
+    // @FXML
+    // private TableColumn<?, ?> addUser_col_password;
     @FXML
     private TableColumn<?, ?> addUser_col_fullname;
     @FXML
@@ -104,14 +105,15 @@ public class UsersController implements Initializable {
     @FXML
     private TableColumn<?, ?> subjecthandle_col_dateInsert;
     @FXML
-    private TableColumn<?, ?> subjecthandle_col_status;   
+    private TableColumn<?, ?> subjecthandle_col_status;
     @FXML
     private ComboBox<String> cbrole;
-    private String[] role = {"Staff", "Admin"};
+    private String[] role = { "Staff", "Admin" };
     @FXML
     private ComboBox<String> cbgender;
-    private String[] gender = {"female", "male"};
+    private String[] gender = { "female", "male" };
     private AlertMessage alert = new AlertMessage();
+
     /**
      * Initializes the controller class.
      */
@@ -121,12 +123,12 @@ public class UsersController implements Initializable {
         cbgender.getItems().addAll(gender);
         showUsers();
         searchFilter();
-    }  
-    
-    public void executeQuery(String query){
+    }
+
+    public void executeQuery(String query) {
         ConnectDB connect = new ConnectDB();
         Connection con = connect.getConnect();
-        
+
         Statement st;
         try {
             st = con.createStatement();
@@ -135,9 +137,9 @@ public class UsersController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-        
-    public void showUsers(){
-        ObservableList<Users> list = getUsers() ;
+
+    public void showUsers() {
+        ObservableList<Users> list = getUsers();
         addUser_col_userid.setCellValueFactory(new PropertyValueFactory<>("userId"));
         addUser_col_username.setCellValueFactory(new PropertyValueFactory<>("userName"));
         addUser_col_fullname.setCellValueFactory(new PropertyValueFactory<>("fullName"));
@@ -146,8 +148,8 @@ public class UsersController implements Initializable {
         addUser_col_createddate.setCellValueFactory(new PropertyValueFactory<>("createDate"));
         addUser_tableView.setItems(list);
     }
-    
-     public ObservableList<Users> getUsers() {
+
+    public ObservableList<Users> getUsers() {
         ObservableList<Users> userList = FXCollections.observableArrayList();
         ConnectDB connect = new ConnectDB();
         Connection con = connect.getConnect();
@@ -158,7 +160,7 @@ public class UsersController implements Initializable {
         try {
             st = con.createStatement();
             rs = st.executeQuery(query);
-            while(rs.next()){
+            while (rs.next()) {
                 Users user = new Users();
                 user.setUserId(rs.getString("User_id"));
                 user.setUserName(rs.getString("User_name"));
@@ -172,13 +174,28 @@ public class UsersController implements Initializable {
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
-            if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-            if (st != null) try { st.close(); } catch (SQLException e) { e.printStackTrace(); }
-            if (con != null) try { con.close(); } catch (SQLException e) { e.printStackTrace(); }
+            if (rs != null)
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            if (st != null)
+                try {
+                    st.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            if (con != null)
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
         }
-        return userList;       
+        return userList;
     }
-    
+
     @FXML
     private void addUser(ActionEvent event) {
         String userId = tfuserid.getText();
@@ -186,21 +203,21 @@ public class UsersController implements Initializable {
         String passWord = tfpassword.getText();
         String fullName = tffullname.getText();
         String role = cbrole.getValue();
-        String gender = cbgender.getValue(); 
+        String gender = cbgender.getValue();
         LocalDate selectedDate = dpcreatedate.getValue();
         String createdDate;
-        
+
         if (selectedDate != null) {
-        createdDate = selectedDate.toString();
+            createdDate = selectedDate.toString();
         } else {
             createdDate = LocalDate.now().toString();
         }
 
         if (userId == null || userId.isEmpty() ||
-            userName == null || userName.isEmpty() ||
-            passWord == null || passWord.isEmpty() ||
-            role == null || role.isEmpty() ||
-            gender == null || gender.isEmpty()) {
+                userName == null || userName.isEmpty() ||
+                passWord == null || passWord.isEmpty() ||
+                role == null || role.isEmpty() ||
+                gender == null || gender.isEmpty()) {
             alert.errorMessage("User ID, Username, Password, Role, Gender can't be null or empty");
             return;
         }
@@ -220,16 +237,16 @@ public class UsersController implements Initializable {
             alert.errorMessage(" User ID must start with S and is followed by exactly 2 numbers");
             return;
         }
-        
+
         String query = "INSERT INTO Users(User_id, User_name, Pass_word, Full_name, Role, Gender, Create_date) " +
-                   "VALUES ('" + userId + "', '" + userName + "', '" + passWord + "', '" + fullName + "', '" +
-                   role + "', '" + gender + "', '" + createdDate + "')";
+                "VALUES ('" + userId + "', '" + userName + "', '" + passWord + "', '" + fullName + "', '" +
+                role + "', '" + gender + "', '" + createdDate + "')";
         executeQuery(query);
         alert.successMessage("Add user successfully");
-        showUsers(); 
+        showUsers();
         searchFilter();
     }
-    
+
     @FXML
     private void clearFields(ActionEvent event) {
         tfuserid.clear();
@@ -241,24 +258,24 @@ public class UsersController implements Initializable {
         dpcreatedate.setValue(null);
         searchFilter();
     }
-    
+
     @FXML
     private void selectUser(MouseEvent event) {
         Users p = addUser_tableView.getSelectionModel().getSelectedItem();
-            if (p != null) {
+        if (p != null) {
             tfuserid.setText(String.valueOf(p.getUserId()));
             tfusername.setText(p.getUserName());
             tfpassword.setText(p.getPassword());
             tffullname.setText(p.getFullName());
             cbrole.setValue(p.getRole());
-            cbgender.setValue(p.getGender());           
+            cbgender.setValue(p.getGender());
             Date createDate = p.getCreateDate();
             LocalDate localDate = createDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             dpcreatedate.setValue(localDate);
         }
         searchFilter();
     }
-    
+
     @FXML
     private void updateUser(ActionEvent event) {
         String userId = tfuserid.getText();
@@ -266,13 +283,13 @@ public class UsersController implements Initializable {
         String passWord = tfpassword.getText();
         String fullName = tffullname.getText();
         String role = cbrole.getValue();
-        String gender = cbgender.getValue(); 
+        String gender = cbgender.getValue();
 
         if (userId == null || userId.isEmpty() ||
-            userName == null || userName.isEmpty() ||
-            passWord == null || passWord.isEmpty() ||
-            role == null || role.isEmpty() ||
-            gender == null || gender.isEmpty()) {
+                userName == null || userName.isEmpty() ||
+                passWord == null || passWord.isEmpty() ||
+                role == null || role.isEmpty() ||
+                gender == null || gender.isEmpty()) {
             alert.errorMessage("User ID, Username, Password, Role, Gender can't be null or empty");
             return;
         }
@@ -288,11 +305,12 @@ public class UsersController implements Initializable {
             alert.errorMessage(" User ID must start with S and is followed by exactly 2 numbers");
             return;
         }
-                
-        String query = "Update Users set User_id = '" + userId + "', User_name = '" + userName+ "', Pass_word = '" + passWord
-                + "', Full_name = '" + fullName+ "', Role = '" + role+ "', Gender = '" + gender
-                +"' where User_id = '" + userId + "'";
-        
+
+        String query = "Update Users set User_id = '" + userId + "', User_name = '" + userName + "', Pass_word = '"
+                + passWord
+                + "', Full_name = '" + fullName + "', Role = '" + role + "', Gender = '" + gender
+                + "' where User_id = '" + userId + "'";
+
         executeQuery(query);
         alert.successMessage("Update user successfully");
         showUsers();
@@ -303,21 +321,21 @@ public class UsersController implements Initializable {
     private void deleteUser(ActionEvent event) {
         String userId = tfuserid.getText();
         if ("S01".equals(userId)) {
-        alert.errorMessage("User 'S01' cannot be deleted.");
-        return;
-    }
-        String query = "DELETE FROM Users WHERE User_id = '" + userId + "'";
-         if (!alert.confirmationMessage("Are you sure?")) {
+            alert.errorMessage("User 'S01' cannot be deleted.");
             return;
         }
-        executeQuery(query);       
+        String query = "DELETE FROM Users WHERE User_id = '" + userId + "'";
+        if (!alert.confirmationMessage("Are you sure?")) {
+            return;
+        }
+        executeQuery(query);
         showUsers();
         alert.successMessage("Delete user successfully");
         searchFilter();
     }
-    
-    private boolean userIdExists(String userId){     
-        try{
+
+    private boolean userIdExists(String userId) {
+        try {
             ConnectDB connect = new ConnectDB();
             Connection con = connect.getConnect();
             String query = "SELECT COUNT(*) FROM Users WHERE User_id = '" + userId + "'";
@@ -326,14 +344,14 @@ public class UsersController implements Initializable {
             if (rs.next()) {
                 return rs.getInt(1) > 0;
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             alert.errorMessage("Database error: " + e.getMessage());
         }
         return false;
     }
-    
-    private boolean usernameExists(String userName){     
-        try{
+
+    private boolean usernameExists(String userName) {
+        try {
             ConnectDB connect = new ConnectDB();
             Connection con = connect.getConnect();
             String query = "SELECT COUNT(*) FROM Users WHERE User_name = '" + userName + "'";
@@ -342,12 +360,12 @@ public class UsersController implements Initializable {
             if (rs.next()) {
                 return rs.getInt(1) > 0;
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             alert.errorMessage("Database error: " + e.getMessage());
         }
         return false;
     }
-           
+
     private void searchFilter() {
         FilteredList<Users> filterData = new FilteredList<>(getUsers(), e -> true);
         txtSearchBar.textProperty().addListener((observable, oldValue, newValue) -> {

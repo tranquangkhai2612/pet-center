@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\group4\petcenter\Controllers\Saler\ProductController.class
 com\group4\petcenter\Controllers\Saler\AddCustomerController.class
 com\group4\petcenter\Models\Enums\StaffMenuEnum.class
@@ -63,4 +64,23 @@ com\group4\petcenter\Models\Product.class
 com\group4\petcenter\Views\ViewFactory.class
 com\group4\petcenter\Controllers\Saler\Product.class
 com\group4\petcenter\Controllers\Admin\DashboardController.class
+=======
+com\group4\petcenter\Models\Enums\AccountTypeEnum.class
+com\group4\petcenter\Models\Enums\AdminMenuEnum.class
+com\group4\petcenter\App.class
+com\group4\petcenter\Controllers\ConnectDB.class
+com\group4\petcenter\Controllers\Admin\HealthRecordsController.class
+module-info.class
+com\group4\petcenter\Models\Users.class
+com\group4\petcenter\Controllers\Admin\AdminMenuController.class
+com\group4\petcenter\Controllers\Admin\ProductsController.class
+com\group4\petcenter\Controllers\Admin\DiagnosisServicesController.class
+com\group4\petcenter\Controllers\LoginController.class
+com\group4\petcenter\Models\Model.class
+com\group4\petcenter\Controllers\AlertMessage.class
+com\group4\petcenter\Controllers\Admin\UsersController.class
+com\group4\petcenter\Views\ViewFactory.class
+com\group4\petcenter\Controllers\Admin\DashboardController.class
+com\group4\petcenter\Controllers\NewLoginController.class
+>>>>>>> 5bf48ab5649196951301db03966b641e438500f0
 com\group4\petcenter\Controllers\Admin\AdminController.class
