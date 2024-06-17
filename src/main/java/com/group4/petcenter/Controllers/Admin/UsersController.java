@@ -108,7 +108,7 @@ public class UsersController implements Initializable {
     private TableColumn<?, ?> subjecthandle_col_status;
     @FXML
     private ComboBox<String> cbrole;
-    private String[] role = { "Staff", "Admin" };
+    private String[] role = { "staff", "admin" };
     @FXML
     private ComboBox<String> cbgender;
     private String[] gender = { "female", "male" };
@@ -301,8 +301,8 @@ public class UsersController implements Initializable {
             alert.errorMessage("Password input must have more than 5 characters");
             return;
         }
-        if (!userId.matches("S\\d{2}")) {
-            alert.errorMessage(" User ID must start with S and is followed by exactly 2 numbers");
+        if (!userId.matches("U\\d{3}")) {
+            alert.errorMessage(" User ID must start with U and is followed by exactly 3 numbers");
             return;
         }
 
@@ -320,8 +320,8 @@ public class UsersController implements Initializable {
     @FXML
     private void deleteUser(ActionEvent event) {
         String userId = tfuserid.getText();
-        if ("S01".equals(userId)) {
-            alert.errorMessage("User 'S01' cannot be deleted.");
+        if ("U001".equals(userId)) {
+            alert.errorMessage("User 'U001' cannot be deleted.");
             return;
         }
         String query = "DELETE FROM Users WHERE User_id = '" + userId + "'";
