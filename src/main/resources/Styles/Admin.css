@@ -5,3 +5,15 @@
 .mainFxmlClass {
 
 }
+
+.table-view{
+    -fx-background-radius:  0 0 15 15;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+}

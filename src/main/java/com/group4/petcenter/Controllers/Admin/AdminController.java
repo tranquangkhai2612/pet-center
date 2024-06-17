@@ -28,6 +28,8 @@ public class AdminController implements Initializable {
             
             if(newVal.equals(USERS)){
                 adminParent.setCenter(Model.getInstance().getViewFactory().getUsersView());
+            }else if(newVal.equals(DASHBOARD)){
+                adminParent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
             }else if(newVal.equals(HEALTH_RECORDS)){
                 adminParent.setCenter(Model.getInstance().getViewFactory().getHealthRecordsView());
             }else if(newVal.equals(DIAGNOSIS_SERVICES)){

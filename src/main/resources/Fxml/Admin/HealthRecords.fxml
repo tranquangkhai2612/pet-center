@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.petcenter.Controllers.Admin.UsersController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="100.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -31,25 +31,25 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField prefWidth="300.0" />
+                        <TextField fx:id="eSearchInput" prefWidth="300.0" />
                      </children>
                   </HBox>
-                  <TableView prefHeight="300.0" prefWidth="680.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="eTableHR" prefHeight="350.0" prefWidth="680.0" style="-fx-background-radius: 0 0 20 20; -fx-background-color: white;" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0">
                     <columns>
-                      <TableColumn minWidth="15.0" prefWidth="50.0" text="Id" />
-                      <TableColumn minWidth="15.0" prefWidth="50.0" text="User Id" />
-                        <TableColumn prefWidth="70.0" text="Animal Id" />
-                        <TableColumn prefWidth="200.0" text="Date" />
-                        <TableColumn prefWidth="200.0" text="Dianosis" />
-                        <TableColumn prefWidth="108.0" text="Action" />
+                      <TableColumn fx:id="eColHRId" minWidth="15.0" prefWidth="100.0" text="Id" />
+                      <TableColumn fx:id="eColHRUserId" minWidth="15.0" prefWidth="100.0" text="User Id" />
+                        <TableColumn fx:id="eColHRAnimalId" prefWidth="100.0" text="Animal Id" />
+                        <TableColumn fx:id="eColHRDate" prefWidth="100.0" text="Date" />
+                        <TableColumn fx:id="eColHRDianosis" prefWidth="200.0" text="Dianosis" />
+                        <TableColumn fx:id="eColHRAction" text="Action" />
                     </columns>
                   </TableView>
-                  <Text fill="#fb6f92" layoutX="322.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Animal" AnchorPane.topAnchor="498.576171875">
+                  <Text fill="#fb6f92" layoutX="322.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pet" AnchorPane.bottomAnchor="170.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <HBox alignment="CENTER" layoutX="202.0" layoutY="531.0" prefHeight="50.0" prefWidth="300.0" AnchorPane.bottomAnchor="120.0">
+                  <HBox alignment="CENTER" layoutX="202.0" layoutY="531.0" prefHeight="30.0" prefWidth="300.0" AnchorPane.bottomAnchor="140.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal ID:" textAlignment="CENTER">
                            <font>
@@ -59,17 +59,21 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Text>
-                        <Text fill="#fb6f92" strokeType="OUTSIDE" strokeWidth="0.0" text="111">
+                        <Text fx:id="eAnimalId" fill="#fb6f92" strokeType="OUTSIDE" strokeWidth="0.0" text="111">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
-                  <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0">
+                  <TableView fx:id="eTableAnimal" prefHeight="100.0" prefWidth="650.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn fx:id="e_animal_col_name" prefWidth="140.0" text="Name" />
+                      <TableColumn fx:id="e_col_animal_gender" prefWidth="100.0" text="Gender" />
+                        <TableColumn fx:id="e_col_animal_birth" prefWidth="100.0" text="Birthdate" />
+                        <TableColumn fx:id="e_col_animal_breed" prefWidth="100.0" text="Breed" />
+                        <TableColumn fx:id="e_col_animal_owner" prefWidth="140.0" text="Owner" />
+                        <TableColumn fx:id="e_col_animal_action" prefWidth="70.0" text="Action" />
                     </columns>
                   </TableView>
                </children>
@@ -91,26 +95,26 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Text>
-                        <Text fill="#fb6f92" strokeType="OUTSIDE" strokeWidth="0.0" text="203">
+                        <Text fx:id="eSelectedHRId" fill="#fb6f92" strokeType="OUTSIDE" strokeWidth="0.0" text="203">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
-                  <TableView prefHeight="400.0" prefWidth="280.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="eTableHRI" prefHeight="400.0" prefWidth="280.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
                      <columns>
-                        <TableColumn text="Items" />
-                        <TableColumn prefWidth="100.0" text="Quantity" />
-                        <TableColumn prefWidth="100.0" text="Action" />
+                        <TableColumn fx:id="eColHRItemItems" prefWidth="100.0" text="Items" />
+                        <TableColumn fx:id="eColHRItemQuantity" prefWidth="100.0" text="Quantity" />
+                        <TableColumn fx:id="eColHRItemAction" text="Action" />
                      </columns>
                   </TableView>
-                  <Button layoutX="90.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #fb6f92;" text="Add Service" textFill="WHITE" AnchorPane.bottomAnchor="119.60000000000002">
+                  <Button fx:id="eAddServiceBtn" layoutX="90.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #fb6f92;" text="Add Service" textFill="WHITE" AnchorPane.bottomAnchor="119.60000000000002">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="90.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2ec4b6;" text="Add Product" textFill="WHITE" AnchorPane.bottomAnchor="49.60000000000002">
+                  <Button fx:id="eAddProductBtn" layoutX="90.0" layoutY="600.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2ec4b6;" text="Add Product" textFill="WHITE" AnchorPane.bottomAnchor="49.60000000000002">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

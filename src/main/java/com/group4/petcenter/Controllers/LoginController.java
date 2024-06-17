@@ -54,6 +54,7 @@ public class LoginController implements Initializable {
         Model.getInstance().getViewFactory().closeStage(stage);
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountTypeEnum.ADMIN){
             Model.getInstance().getViewFactory().showAdminWindow();
+            Model.getInstance().getViewFactory().closeStage(stage);
         }else{
             Model.getInstance().getViewFactory().showStaffWindow();
         }

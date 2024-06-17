@@ -1,0 +1,105 @@
+
+.close{
+    -fx-background-color: #ff2929;
+    -fx-background-radius: 50px;
+    -fx-cursor: hand;
+}
+.close:hover{
+    -fx-background-color: #000;
+}
+
+.white-bg{
+    -fx-background-color: #fff;
+}
+
+.radius{
+    -fx-background-radius: 8px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.main-bg{
+    -fx-background-color: linear-gradient(to bottom right, #0d9642, #1a722c);
+}
+
+.btn{
+    -fx-background-color: linear-gradient(to bottom right, #ffafcc, #ffafcc);
+    -fx-font-family: Arial;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+.btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #ffafcc, #ffafcc);
+}
+
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-border-color: #fff;
+    -fx-border-width: .8px;
+    -fx-text-fill: #fff;
+}
+.nav-btn:hover{
+    -fx-background-color: #0abfa4;
+    -fx-border-color: #0abfa4;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: linear-gradient(to bottom right, #ffafcc, #ffafcc);
+    -fx-border-radius: 8px;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right, #ffafcc, #ffafcc);
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+.table-view .column-header .label{
+    
+    -fx-text-fill: #fff;
+}
+.chart-bar {
+    -fx-bar-fill: #ffafcc;
+}
+/* Customize colors for each data point in the series */
+.chart-bar.series0.data0 {
+    -fx-bar-fill: #ffcc99; /* Color for series 0, data 0 */
+}
+
+.chart-bar.series0.data1 {
+    -fx-bar-fill: #ff6699; /* Color for series 0, data 1 */
+}
+
+.chart-bar.series0.data2 {
+    -fx-bar-fill: #cc99ff; /* Color for series 0, data 2 */
+}
+
+.chart-bar.series0.data3 {
+    -fx-bar-fill: #ffffb2 ; /* Color for series 0, data 3 */
+}
+
+.chart-bar.series0.data4 {
+    -fx-bar-fill: #ffb0b0; /* Color for series 0, data 4 */
+}
+
+.chart-bar.series0.data5 {
+    -fx-bar-fill: #ffccff; /* Color for series 0, data 5 */
+}
+
+/* If you have multiple series, you can define colors for each series like this: */
+
+.chart-bar.series1.data0 {
+    -fx-bar-fill: #ff9966; /* Color for series 1, data 0 */
+}
+
+.chart-series-line {
+    -fx-stroke: #ffafcc; 
+}

@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,10 +33,10 @@ public class AdminMenuController implements Initializable {
     public Button eProducts;
 
     @FXML
-    public Button eSettings;
-
-    @FXML
     public Button eUsers;
+    
+    @FXML
+    private Button eDashboard;
 
     /**
      * Initializes the controller class.
@@ -50,6 +51,8 @@ public class AdminMenuController implements Initializable {
         eProducts.setOnAction(actionEvent -> onProducts());
         eHealthRecords.setOnAction(actionEvent -> onHealthRecords());
         eDiagnosisServices.setOnAction(actionEvent -> onDiagnosisServices());
+        eLogout.setOnAction(actionEvent -> onLogout());
+        eDashboard.setOnAction(e -> onDashboard());
     }
 
     private void onProducts() {
@@ -60,11 +63,21 @@ public class AdminMenuController implements Initializable {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.USERS);
     }
     
+    private void onDashboard(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.DASHBOARD);
+    }
+    
     private void onHealthRecords(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.HEALTH_RECORDS);
     }
     
     private void onDiagnosisServices(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuEnum.DIAGNOSIS_SERVICES);
+    }
+
+    private void onLogout() {
+        Stage stage = (Stage) eLogout.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
     }
 }
